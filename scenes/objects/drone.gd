@@ -11,6 +11,6 @@ func _process(_delta):
 	velocity = direction * 100
 	
 	if velocity.x > 1000:
-		velocity.x = 1
+		velocity.x = 0
 	
 	move_and_slide()
