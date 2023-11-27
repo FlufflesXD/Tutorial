@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1gunmxb88ckj"]
+
+[ext_resource type="PackedScene" uid="uid://c017l36pjx4gw" path="res://scenes/objects/car.tscn" id="4_333am"]
+[ext_resource type="PackedScene" uid="uid://ctmqv0pom8cab" path="res://scenes/player/player.tscn" id="4_iotqb"]
+[ext_resource type="PackedScene" uid="uid://dfkdi2p4q0t1n" path="res://scenes/objects/drone.tscn" id="4_lda76"]
+[ext_resource type="PackedScene" uid="uid://7ho06ked72wn" path="res://scenes/objects/bed.tscn" id="5_38i25"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Bed" parent="." instance=ExtResource("5_38i25")]
+position = Vector2(841, 205)
+
+[node name="Car" parent="." instance=ExtResource("4_333am")]
+position = Vector2(367, 166)
+
+[node name="Player" parent="." instance=ExtResource("4_iotqb")]
+position = Vector2(128, 539)
+
+[node name="Drone" parent="." instance=ExtResource("4_lda76")]
