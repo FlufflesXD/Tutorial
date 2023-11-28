@@ -1,19 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1gunmxb88ckj"]
+[gd_scene load_steps=4 format=3 uid="uid://c1gunmxb88ckj"]
 
-[ext_resource type="PackedScene" uid="uid://c017l36pjx4gw" path="res://scenes/objects/car.tscn" id="4_333am"]
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_4nf8f"]
+[ext_resource type="PackedScene" uid="uid://b4yyhqqygygal" path="res://scenes/objects/gate.tscn" id="3_hqrbd"]
 [ext_resource type="PackedScene" uid="uid://ctmqv0pom8cab" path="res://scenes/player/player.tscn" id="4_iotqb"]
-[ext_resource type="PackedScene" uid="uid://dfkdi2p4q0t1n" path="res://scenes/objects/drone.tscn" id="4_lda76"]
-[ext_resource type="PackedScene" uid="uid://7ho06ked72wn" path="res://scenes/objects/bed.tscn" id="5_38i25"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_4nf8f")
 
-[node name="Bed" parent="." instance=ExtResource("5_38i25")]
-position = Vector2(841, 205)
-
-[node name="Car" parent="." instance=ExtResource("4_333am")]
-position = Vector2(367, 166)
+[node name="Gate" parent="." instance=ExtResource("3_hqrbd")]
 
 [node name="Player" parent="." instance=ExtResource("4_iotqb")]
 position = Vector2(128, 539)
 
-[node name="Drone" parent="." instance=ExtResource("4_lda76")]
+[connection signal="on_player_entered_gate" from="Gate" to="." method="_on_gate_on_player_entered_gate"]
+[connection signal="on_player_exited_gate" from="Gate" to="." method="_on_gate_on_player_exited_gate"]
+[connection signal="grenadeFired" from="Player" to="." method="_on_player_grenade_fired"]
+[connection signal="laserFired" from="Player" to="." method="_on_player_laser_fired"]

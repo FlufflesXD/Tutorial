@@ -16,3 +16,14 @@ texture = ExtResource("1_asf5q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_l2vqa")
+
+[node name="LaserCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="GrenadeCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="LaserCooldown" to="." method="_on_laser_cooldown_timeout"]
+[connection signal="timeout" from="GrenadeCooldown" to="." method="_on_grenade_cooldown_timeout"]
