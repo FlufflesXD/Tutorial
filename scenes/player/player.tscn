@@ -25,5 +25,16 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="LaserStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(20, -127)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(12, -123)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(28, -123)
+
 [connection signal="timeout" from="LaserCooldown" to="." method="_on_laser_cooldown_timeout"]
 [connection signal="timeout" from="GrenadeCooldown" to="." method="_on_grenade_cooldown_timeout"]
